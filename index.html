@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es" id="htmlRoot">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-es="Batalla de Talentos – SENA CMTC" data-en="Battle of Talents – SENA CMTC">Batalla de Talentos – SENA CMTC</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <style>
+    .glang-toggle { display:flex; gap:4px; background:rgba(255,255,255,0.06); border:1px solid var(--border); border-radius:20px; padding:3px; }
+    .glang-btn { background:transparent; border:none; color:var(--muted); font-size:.74rem; font-weight:600; padding:.32rem .75rem; border-radius:16px; cursor:pointer; transition:var(--t); }
+    .glang-btn.active { background:var(--purple); color:#fff; }
+  </style>
+</head>
+<body>
+
+<nav id="nav" class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="brand navbar-brand" href="#inicio">
+      <span class="brand-dot"></span>
+      <span data-es="Batalla de Talentos" data-en="Battle of Talents">Batalla de Talentos</span>
+    </a>
+    <div class="d-flex align-items-center gap-2 order-lg-last">
+      <div class="glang-toggle">
+        <button class="glang-btn active" id="gBtnEs" onclick="setLang('es')">ES</button>
+        <button class="glang-btn" id="gBtnEn" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto gap-1 align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#inicio" data-es="Inicio" data-en="Home">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experiencia" data-es="Experiencia" data-en="Experience">Experiencia</a></li>
+        <li class="nav-item"><a class="nav-link" href="#talentos" data-es="Talentos" data-en="Talents">Talentos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#galeria" data-es="Galería" data-en="Gallery">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="#video" data-es="Video" data-en="Video">Video</a></li>
+        <li class="nav-item"><a class="nav-link" href="#reflexion" data-es="Reflexión" data-en="Reflection">Reflexión</a></li>
+        <li class="nav-item"><a class="nav-link nav-glossary" href="pages/glossary.html" data-es="Glosario" data-en="Glossary">Glosario</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section id="inicio" class="hero">
+  <div class="hero-glow-1"></div>
+  <div class="hero-glow-2"></div>
+  <div class="container position-relative" style="z-index:2">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <span class="hero-tag" data-es="SENA · Centro de Manufactura en Textil y Cuero · 2025" data-en="SENA · Textile and Leather Manufacturing Center · 2025">SENA · Centro de Manufactura en Textil y Cuero · 2025</span>
+        <h1 class="hero-title">
+          <span data-es="Batalla" data-en="Battle">Batalla</span><br/>
+          <span class="em" data-es="de Talentos" data-en="of Talents">de Talentos</span><br/>
+          CMTC
+        </h1>
+        <p class="hero-quote" data-es='"Una tarde donde la creatividad, el talento y la emoción llenaron cada rincón del escenario."' data-en='"An afternoon where creativity, talent, and emotion filled every corner of the stage."'>
+          "Una tarde donde la creatividad, el talento<br/>y la emoción llenaron cada rincón del escenario."
+        </p>
+        <p class="hero-sub" data-es="Baile, canto, música, arte, cuentos, performance… una tarde donde los aprendices del SENA demostraron que detrás de cada técnico hay un artista esperando brillar." data-en="Dance, singing, music, art, storytelling, performance… an afternoon where SENA learners showed that behind every technician there is an artist waiting to shine.">
+          Baile, canto, música, arte, cuentos, performance… una tarde donde los aprendices del SENA demostraron que detrás de cada técnico hay un artista esperando brillar.
+        </p>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="#talentos" class="btn-main" data-es="Ver los talentos" data-en="See the talents">Ver los talentos</a>
+          <a href="#galeria"  class="btn-outline" data-es="Ir a la galería" data-en="Go to gallery">Ir a la galería</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div id="heroCarousel" class="carousel slide carousel-fade hero-carousel" data-bs-ride="carousel" data-bs-interval="3200">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="5"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active"><img src="img/bt41-logo-oficial.jpeg" alt="Batalla de Talentos – Logo oficial" class="d-block w-100"/></div>
+            <div class="carousel-item"><img src="img/bt37-clausura-escenario.jpeg" alt="Clausura del evento" class="d-block w-100"/></div>
+            <div class="carousel-item"><img src="img/bt30-selfie-amigos.jpeg" alt="Selfie grupo" class="d-block w-100" style="object-position:top"/></div>
+            <div class="carousel-item"><img src="img/bt06-luces-escenario.jpeg" alt="Luces escenario" class="d-block w-100"/></div>
+            <div class="carousel-item"><img src="img/bt34-baile-escenario.jpeg" alt="Baile" class="d-block w-100"/></div>
+            <div class="carousel-item"><img src="img/bt27-figura-negra-purpura.jpeg" alt="Performance" class="d-block w-100" style="object-position:top"/></div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+          <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding:2.5rem 0">
+  <div class="container">
+    <div class="stats-bar">
+      <div class="row g-4 text-center">
+        <div class="col-6 col-md-3"><div class="stat-n">1</div><div class="stat-l" data-es="Tarde mágica" data-en="Magical afternoon">Tarde mágica</div></div>
+        <div class="col-6 col-md-3"><div class="stat-n">5+</div><div class="stat-l" data-es="Disciplinas artísticas" data-en="Artistic disciplines">Disciplinas artísticas</div></div>
+        <div class="col-6 col-md-3"><div class="stat-n">41</div><div class="stat-l" data-es="Fotos del evento" data-en="Event photos">Fotos del evento</div></div>
+        <div class="col-6 col-md-3"><div class="stat-n">100%</div><div class="stat-l" data-es="Talento SENA" data-en="SENA talent">Talento SENA</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experiencia" class="sec sec-alt">
+  <div class="container">
+    <span class="eyebrow" style="color:var(--purple)" data-es="Crónica del evento" data-en="Event chronicle">Crónica del evento</span>
+    <h2 class="sec-title"><span data-es="Una tarde que" data-en="An afternoon that">Una tarde que</span> <em data-es="lo tenía todo" data-en="had it all">lo tenía todo</em></h2>
+    <div class="row g-5 align-items-center mt-1">
+      <div class="col-lg-6 fade-up"><div class="n-img tall"><img src="img/bt01-apertura-escenario.jpeg" alt="Apertura"/></div></div>
+      <div class="col-lg-6 fade-up">
+        <p class="sec-text" data-es='La Batalla de Talentos del CMTC fue, sin duda, una experiencia increíble. Desde el momento en que se encendieron las luces del escenario, era evidente que esa tarde sería diferente: llena de baile, creatividad, tranquilidad, felicidad, emoción y —como su nombre lo indica— talento puro.' data-en='The CMTC Battle of Talents was, without a doubt, an incredible experience. From the moment the stage lights came on, it was clear that afternoon would be different: full of dance, creativity, calm, happiness, emotion, and — as its name suggests — pure talent.'>
+          La Batalla de Talentos del CMTC fue, sin duda, una experiencia increíble. Desde el momento en que se encendieron las luces del escenario, era evidente que esa tarde sería diferente: llena de baile, creatividad, tranquilidad, felicidad, emoción y —como su nombre lo indica— <strong style="color:var(--white)">talento puro</strong>.
+        </p>
+        <p class="sec-text" data-es='Al iniciar vimos los bailes del centro de bienestar: todo muy alegre, una manera de salir de la zona habitual de trabajo y hacer algo que claramente los motiva a seguir. Compañeros de diferentes fichas bailando solos, en pareja y en grupo. Cada movimiento contaba una historia sin necesidad de palabras.' data-en='At the start we saw dances from the wellness center: everything very joyful, a way to step out of the usual work routine and do something that clearly motivates them to keep going. Classmates from different cohorts dancing solo, in pairs, and in groups. Every movement told a story without needing words.'>
+          Al iniciar vimos los bailes del centro de bienestar: todo muy alegre, una manera de salir de la zona habitual de trabajo y hacer algo que claramente los motiva a seguir. Compañeros de diferentes fichas bailando solos, en pareja y en grupo. Cada movimiento contaba una historia sin necesidad de palabras.
+        </p>
+        <p class="sec-text" data-es='El evento nos recordó que el SENA no es solo un espacio de formación técnica: es también una comunidad de personas con sueños, habilidades artísticas y una profunda necesidad de expresarse. Esa tarde fue el escenario perfecto para que esas voces dijeran: "¡Aquí estoy, esto soy yo!"' data-en='The event reminded us that SENA is not just a technical training space: it is also a community of people with dreams, artistic abilities, and a deep need to express themselves. That afternoon was the perfect stage for those voices to say: "Here I am, this is me!"'>
+          El evento nos recordó que el SENA no es solo un espacio de formación técnica: es también una comunidad de personas con sueños, habilidades artísticas y una profunda necesidad de expresarse. Esa tarde fue el escenario perfecto para que esas voces dijeran: <em style="color:var(--orange)">"¡Aquí estoy, esto soy yo!"</em>
+        </p>
+        <div class="row g-3 mt-2">
+          <div class="col-6"><div class="n-img"><img src="img/bt28-selfie-grupo.jpeg" alt="Selfie grupo"/></div></div>
+          <div class="col-6"><div class="n-img"><img src="img/bt04-entrega-certificados.jpeg" alt="Certificados"/></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="talentos" class="sec">
+  <div class="container">
+    <span class="eyebrow" style="color:var(--orange)" data-es="Lo que vivimos" data-en="What we experienced">Lo que vivimos</span>
+    <h2 class="sec-title"><span data-es="Los" data-en="The">Los</span> <em data-es="talentos" data-en="talents">talentos</em> <span data-es="que brillaron" data-en="that shined">que brillaron</span></h2>
+    <p class="sec-text" style="max-width:640px;margin-bottom:3rem" data-es="Cada presentación fue un mundo diferente. Aquí un recorrido por los momentos que más nos marcaron durante la tarde." data-en="Each performance was a different world. Here is a journey through the moments that marked us most during the afternoon.">
+      Cada presentación fue un mundo diferente. Aquí un recorrido por los momentos que más nos marcaron durante la tarde.
+    </p>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4 fade-up">
+        <div class="t-card" style="--tc:var(--purple)">
+          <i class="bi bi-music-note-beamed t-icon" style="color:var(--purple)"></i>
+          <h4 data-es="Baile — El cuerpo como lenguaje" data-en="Dance — The body as language">Baile — El cuerpo como lenguaje</h4>
+          <p data-es="Compañeros de diferentes fichas bailando solos, en pareja y en grupo. Todo muy alegre, una manera de salir de su zona habitual haciendo algo que claramente los motiva a seguir." data-en="Classmates from different cohorts dancing solo, in pairs, and in groups. All very joyful, a way to step outside their usual routine doing something that clearly motivates them to keep going.">
+            Compañeros de diferentes fichas bailando solos, en pareja y en grupo. Todo muy alegre, una manera de salir de su zona habitual haciendo algo que claramente los motiva a seguir.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fade-up">
+        <div class="t-card" style="--tc:var(--orange)">
+          <i class="bi bi-mic t-icon" style="color:var(--orange)"></i>
+          <h4 data-es="Canto — La voz como emoción" data-en="Singing — The voice as emotion">Canto — La voz como emoción</h4>
+          <p data-es="Tuvimos batalla de canto, donde todos mostraron sus sentimientos desde una canción. Voces que atravesaron el salón y llegaron directo al corazón." data-en="We had a singing battle, where everyone showed their feelings through a song. Voices that crossed the room and went straight to the heart.">
+            Tuvimos batalla de canto, donde todos mostraron sus sentimientos desde una canción. Voces que atravesaron el salón y llegaron directo al corazón.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fade-up">
+        <div class="t-card" style="--tc:var(--cyan)">
+          <i class="bi bi-vinyl t-icon" style="color:var(--cyan)"></i>
+          <h4 data-es="Instrumentos — Guitarra y saxofón" data-en="Instruments — Guitar and saxophone">Instrumentos — Guitarra y saxofón</h4>
+          <p data-es="El guitarrista dejó al público en silencio absoluto. El saxofonista llenó el espacio con una calidez que pocas cosas logran. Dos lenguajes musicales distintos, la misma pasión." data-en="The guitarist left the audience in absolute silence. The saxophonist filled the space with a warmth that few things achieve. Two different musical languages, the same passion.">
+            El guitarrista dejó al público en silencio absoluto. El saxofonista llenó el espacio con una calidez que pocas cosas logran. Dos lenguajes musicales distintos, la misma pasión.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fade-up">
+        <div class="t-card" style="--tc:#10B981">
+          <i class="bi bi-book t-icon" style="color:#10B981"></i>
+          <h4 data-es="Cuentos y narrativa — Ser escuchado" data-en="Storytelling — Being heard">Cuentos y narrativa — Ser escuchado</h4>
+          <p data-es="Vimos a compañeros siendo arte, no solo haciéndolo: creando cuentos, describiendo sus gustos y experiencias propias. Se notaba su emoción por ser escuchados." data-en="We saw classmates being art, not just making it: creating stories, describing their own tastes and experiences. You could feel their excitement about being heard.">
+            Vimos a compañeros siendo arte, no solo haciéndolo: creando cuentos, describiendo sus gustos y experiencias propias. Se notaba su emoción por ser escuchados.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fade-up">
+        <div class="t-card" style="--tc:#F59E0B">
+          <i class="bi bi-brush t-icon" style="color:#F59E0B"></i>
+          <h4 data-es="Arte visual — Pinturas y dibujos" data-en="Visual art — Paintings and drawings">Arte visual — Pinturas y dibujos</h4>
+          <p data-es="Vimos a compañeros mostrando a través de fotos, dibujos y pinturas su esencia, lo que los representa y mueve su alma. Cada obra era un espejo de quien la creó." data-en="We saw classmates showing their essence through photos, drawings, and paintings — what represents them and moves their soul. Each piece was a mirror of who created it.">
+            Vimos a compañeros mostrando a través de fotos, dibujos y pinturas su esencia, lo que los representa y mueve su alma. Cada obra era un espejo de quien la creó.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 fade-up">
+        <div class="t-card" style="--tc:#EC4899">
+          <i class="bi bi-stars t-icon" style="color:#EC4899"></i>
+          <h4 data-es="Performance — Arte sin categoría" data-en="Performance — Art without category">Performance — Arte sin categoría</h4>
+          <p data-es="Hubo momentos donde el talento trascendió cualquier categoría. Figuras en la sombra, bailarines de blanco, disfraces… el arte no siempre necesita un nombre para tener impacto." data-en="There were moments where talent transcended any category. Figures in the shadows, dancers in white, costumes… art doesn't always need a name to have an impact.">
+            Hubo momentos donde el talento trascendió cualquier categoría. Figuras en la sombra, bailarines de blanco, disfraces… el arte no siempre necesita un nombre para tener impacto.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row g-5 align-items-center mt-5">
+      <div class="col-lg-9 fade-up mx-auto">
+        <span class="eyebrow" style="color:var(--cyan)" data-es="Música en vivo" data-en="Live music">Música en vivo</span>
+        <h3 class="sec-title" style="font-size:clamp(1.4rem,3vw,2rem)"><span data-es="Cuando el talento se vuelve" data-en="When talent becomes">Cuando el talento se vuelve</span> <em data-es="sonido" data-en="sound">sonido</em></h3>
+        <p class="sec-text" data-es="El saxofonista fue uno de los momentos más memorables de la tarde. Con una técnica depurada y una presencia escénica natural, logró algo difícil: silenciar un salón lleno de gente. No con la ausencia de sonido, sino con la abundancia de él." data-en="The saxophonist was one of the most memorable moments of the afternoon. With refined technique and a natural stage presence, he achieved something difficult: silencing a room full of people. Not through the absence of sound, but through its abundance.">
+          El saxofonista fue uno de los momentos más memorables de la tarde. Con una técnica depurada y una presencia escénica natural, logró algo difícil: silenciar un salón lleno de gente. No con la ausencia de sonido, sino con la abundancia de él.
+        </p>
+        <p class="sec-text" data-es="El guitarrista, sentado frente al telón azul con la pintura clásica de fondo, construyó una imagen que por sí sola ya era una obra de arte." data-en="The guitarist, sitting in front of the blue backdrop with the classic painting behind him, built an image that was, on its own, already a work of art.">
+          El guitarrista, sentado frente al telón azul con la pintura clásica de fondo, construyó una imagen que por sí sola ya era una obra de arte.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-5 align-items-center mt-5">
+      <div class="col-lg-9 fade-up mx-auto">
+        <span class="eyebrow" style="color:var(--orange)" data-es="Batalla de canto" data-en="Singing battle">Batalla de canto</span>
+        <h3 class="sec-title" style="font-size:clamp(1.4rem,3vw,2rem)"><span data-es="Voces que" data-en="Voices that">Voces que</span> <em data-es="atraviesan paredes" data-en="cross walls">atraviesan paredes</em></h3>
+        <p class="sec-text" data-es="Las cantantes que subieron al escenario demostraron que la voz es el instrumento más íntimo de todos. Cada participante llegó con su timbre único, su historia particular." data-en="The singers who took the stage proved that the voice is the most intimate instrument of all. Each participant arrived with their own unique tone, their own particular story.">
+          Las cantantes que subieron al escenario demostraron que la voz es el instrumento más íntimo de todos. Cada participante llegó con su timbre único, su historia particular.
+        </p>
+        <p class="sec-text" data-es="Lo más impactante no fue la perfección técnica —aunque la había— sino la valentía. Pararse frente a un salón lleno y cantar requiere una vulnerabilidad que pocas personas se atreven a mostrar." data-en="The most striking thing wasn't technical perfection — though there was plenty — but the courage. Standing in front of a full room and singing requires a vulnerability that few people dare to show.">
+          Lo más impactante no fue la perfección técnica —aunque la había— sino la valentía. Pararse frente a un salón lleno y cantar requiere una vulnerabilidad que pocas personas se atreven a mostrar.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-5 align-items-center mt-5">
+      <div class="col-lg-9 fade-up mx-auto">
+        <span class="eyebrow" style="color:#F59E0B" data-es="Arte visual" data-en="Visual art">Arte visual</span>
+        <h3 class="sec-title" style="font-size:clamp(1.4rem,3vw,2rem)"><span data-es="El alma en un" data-en="The soul on a">El alma en un</span> <em data-es="lienzo" data-en="canvas">lienzo</em></h3>
+        <p class="sec-text" data-es="Vimos a compañeros siendo arte, no solo haciéndolo. Los corazones pintados, los dibujos en los tableros azules y rojos, las pinturas clásicas de fondo: todo hablaba de quien los creó." data-en="We saw classmates being art, not just making it. The painted hearts, the drawings on the blue and red boards, the classic paintings in the background: everything spoke of who created them.">
+          Vimos a compañeros siendo arte, no solo haciéndolo. Los corazones pintados, los dibujos en los tableros azules y rojos, las pinturas clásicas de fondo: todo hablaba de quien los creó.
+        </p>
+        <p class="sec-text" data-es="Esa distinción es importante. No interpretaban un personaje: se mostraban a sí mismos, con todo lo que eso implica. Una valentía que merece reconocimiento." data-en="That distinction matters. They weren't playing a character: they were showing themselves, with everything that implies. A courage that deserves recognition.">
+          Esa distinción es importante. No interpretaban un personaje: se mostraban a sí mismos, con todo lo que eso implica. Una valentía que merece reconocimiento.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="galeria" class="sec sec-alt">
+  <div class="container">
+    <span class="eyebrow" style="color:var(--purple)" data-es="Registro visual completo" data-en="Full visual record">Registro visual completo</span>
+    <h2 class="sec-title"><span data-es="Galería" data-en="Gallery">Galería</span> <em data-es="Batalla de Talentos" data-en="Battle of Talents">Batalla de Talentos</em></h2>
+    <p class="sec-text mb-4" data-es="Haz clic en cualquier imagen para verla en grande." data-en="Click on any image to view it larger.">Haz clic en cualquier imagen para verla en grande.</p>
+
+    <div class="masonry" id="masonryGrid">
+      <div class="m-item" data-img="img/bt41-logo-oficial.jpeg" data-cap-es="Batalla de Talentos – Gala de aprendizaje · Logo oficial del evento" data-cap-en="Battle of Talents – Learning Gala · Official event logo"><img src="img/bt41-logo-oficial.jpeg" alt="Logo oficial"/><div class="m-overlay"><span data-es="Logo oficial del evento" data-en="Official event logo">Logo oficial del evento</span></div></div>
+      <div class="m-item" data-img="img/bt37-clausura-escenario.jpeg" data-cap-es="Clausura del evento – Batalla de Talentos CMTC" data-cap-en="Event closing – CMTC Battle of Talents"><img src="img/bt37-clausura-escenario.jpeg" alt="Clausura"/><div class="m-overlay"><span data-es="Clausura del evento" data-en="Event closing">Clausura del evento</span></div></div>
+      <div class="m-item" data-img="img/bt30-selfie-amigos.jpeg" data-cap-es="Amigos en el evento – Camaradería y alegría" data-cap-en="Friends at the event – Camaraderie and joy"><img src="img/bt30-selfie-amigos.jpeg" alt="Selfie amigos"/><div class="m-overlay"><span data-es="Selfie de amigos" data-en="Friends selfie">Selfie de amigos</span></div></div>
+      <div class="m-item" data-img="img/bt38-grupo-escenario.jpeg" data-cap-es="Grupo en escenario – Participantes recibiendo reconocimiento" data-cap-en="Group on stage – Participants receiving recognition"><img src="img/bt38-grupo-escenario.jpeg" alt="Grupo escenario"/><div class="m-overlay"><span data-es="Grupo en escenario" data-en="Group on stage">Grupo en escenario</span></div></div>
+      <div class="m-item" data-img="img/bt06-luces-escenario.jpeg" data-cap-es="Luces del escenario – Apertura de la tarde" data-cap-en="Stage lights – Afternoon opening"><img src="img/bt06-luces-escenario.jpeg" alt="Luces"/><div class="m-overlay"><span data-es="Luces del escenario" data-en="Stage lights">Luces del escenario</span></div></div>
+      <div class="m-item" data-img="img/bt07-saxofonista.jpeg" data-cap-es="Saxofonista – Música en vivo" data-cap-en="Saxophonist – Live music"><img src="img/bt07-saxofonista.jpeg" alt="Saxofonista"/><div class="m-overlay"><span data-es="Saxofonista" data-en="Saxophonist">Saxofonista</span></div></div>
+      <div class="m-item" data-img="img/bt10-guitarrista-closeup.jpeg" data-cap-es="Guitarrista – Primer plano" data-cap-en="Guitarist – Close-up"><img src="img/bt10-guitarrista-closeup.jpeg" alt="Guitarrista"/><div class="m-overlay"><span data-es="Guitarrista" data-en="Guitarist">Guitarrista</span></div></div>
+      <div class="m-item" data-img="img/bt12-cantante-negra.jpeg" data-cap-es="Cantante – Batalla de canto" data-cap-en="Singer – Singing battle"><img src="img/bt12-cantante-negra.jpeg" alt="Cantante"/><div class="m-overlay"><span data-es="Batalla de canto" data-en="Singing battle">Batalla de canto</span></div></div>
+      <div class="m-item" data-img="img/bt40-cantante-vestido-negro.jpeg" data-cap-es="Cantante – Vestido negro, bandera del SENA al fondo" data-cap-en="Singer – Black dress, SENA flag in the background"><img src="img/bt40-cantante-vestido-negro.jpeg" alt="Cantante vestido negro"/><div class="m-overlay"><span data-es="Voz y presencia" data-en="Voice and presence">Voz y presencia</span></div></div>
+      <div class="m-item" data-img="img/bt20-cantante-rojo.jpeg" data-cap-es="Cantante de rojo – Voz de fuego" data-cap-en="Singer in red – Voice of fire"><img src="img/bt20-cantante-rojo.jpeg" alt="Cantante rojo"/><div class="m-overlay"><span data-es="Voz de fuego" data-en="Voice of fire">Voz de fuego</span></div></div>
+      <div class="m-item" data-img="img/bt14-cantante-escenario.jpeg" data-cap-es="Cantante en escenario" data-cap-en="Singer on stage"><img src="img/bt14-cantante-escenario.jpeg" alt="Cantante escenario"/><div class="m-overlay"><span data-es="Interpretación vocal" data-en="Vocal performance">Interpretación vocal</span></div></div>
+      <div class="m-item" data-img="img/bt17-cantante-vestido.jpeg" data-cap-es="Cantante con vestido" data-cap-en="Singer in dress"><img src="img/bt17-cantante-vestido.jpeg" alt="Cantante vestido"/><div class="m-overlay"><span data-es="Voz y elegancia" data-en="Voice and elegance">Voz y elegancia</span></div></div>
+      <div class="m-item" data-img="img/bt35-bailarin-blanco2.jpeg" data-cap-es="Bailarín de blanco – Movimiento y expresión" data-cap-en="Dancer in white – Movement and expression"><img src="img/bt35-bailarin-blanco2.jpeg" alt="Bailarín"/><div class="m-overlay"><span data-es="Bailarín de blanco" data-en="Dancer in white">Bailarín de blanco</span></div></div>
+      <div class="m-item" data-img="img/bt15-bailarin-blanco.jpeg" data-cap-es="Performance – El cuerpo como arte" data-cap-en="Performance – The body as art"><img src="img/bt15-bailarin-blanco.jpeg" alt="Performance"/><div class="m-overlay"><span data-es="Performance" data-en="Performance">Performance</span></div></div>
+      <div class="m-item" data-img="img/bt39-baile-luces-azul.jpeg" data-cap-es="Baile – Luces azules y arte clásico de fondo" data-cap-en="Dance – Blue lights and classic art in the background"><img src="img/bt39-baile-luces-azul.jpeg" alt="Baile luces azul"/><div class="m-overlay"><span data-es="Baile con luces azules" data-en="Dance with blue lights">Baile con luces azules</span></div></div>
+      <div class="m-item" data-img="img/bt36-bailarin-luces.jpeg" data-cap-es="Bailarín – Luces de escenario" data-cap-en="Dancer – Stage lights"><img src="img/bt36-bailarin-luces.jpeg" alt="Bailarín luces"/><div class="m-overlay"><span data-es="Luces y movimiento" data-en="Lights and movement">Luces y movimiento</span></div></div>
+      <div class="m-item" data-img="img/bt34-baile-escenario.jpeg" data-cap-es="Baile en el escenario – Presentación grupal" data-cap-en="Dance on stage – Group performance"><img src="img/bt34-baile-escenario.jpeg" alt="Baile"/><div class="m-overlay"><span data-es="Baile en escena" data-en="Dance on stage">Baile en escena</span></div></div>
+      <div class="m-item" data-img="img/bt19-arte-corazon-rosa.jpeg" data-cap-es="Arte – Corazón rosado iluminado" data-cap-en="Art – Illuminated pink heart"><img src="img/bt19-arte-corazon-rosa.jpeg" alt="Arte corazón rosa"/><div class="m-overlay"><span data-es="Arte del corazón" data-en="Heart art">Arte del corazón</span></div></div>
+      <div class="m-item" data-img="img/bt23-arte-corazon-rojo.jpeg" data-cap-es="Arte – Corazón rojo con ojos" data-cap-en="Art – Red heart with eyes"><img src="img/bt23-arte-corazon-rojo.jpeg" alt="Arte corazón rojo"/><div class="m-overlay"><span data-es="Corazón con ojos" data-en="Heart with eyes">Corazón con ojos</span></div></div>
+      <div class="m-item" data-img="img/bt21-arte-tablero-azul.jpeg" data-cap-es="Exhibición – Tablero azul con dibujos" data-cap-en="Exhibition – Blue board with drawings"><img src="img/bt21-arte-tablero-azul.jpeg" alt="Tablero arte"/><div class="m-overlay"><span data-es="Exhibición de arte" data-en="Art exhibition">Exhibición de arte</span></div></div>
+      <div class="m-item" data-img="img/bt05-presentacion-arte-azul.jpeg" data-cap-es="Arte visual – Presentación con telón azul" data-cap-en="Visual art – Presentation with blue backdrop"><img src="img/bt05-presentacion-arte-azul.jpeg" alt="Arte azul"/><div class="m-overlay"><span data-es="Arte visual" data-en="Visual art">Arte visual</span></div></div>
+      <div class="m-item" data-img="img/bt27-figura-negra-purpura.jpeg" data-cap-es="Figura encapuchada – Performance con luz púrpura" data-cap-en="Hooded figure – Performance with purple light"><img src="img/bt27-figura-negra-purpura.jpeg" alt="Figura púrpura"/><div class="m-overlay"><span data-es="Figura en la sombra" data-en="Figure in the shadows">Figura en la sombra</span></div></div>
+      <div class="m-item" data-img="img/bt25-cuento-disfraz.jpeg" data-cap-es="Teatro – Participante con disfraz oscuro" data-cap-en="Theater – Participant in dark costume"><img src="img/bt25-cuento-disfraz.jpeg" alt="Cuento disfraz"/><div class="m-overlay"><span data-es="Cuento en disfraz" data-en="Story in costume">Cuento en disfraz</span></div></div>
+      <div class="m-item" data-img="img/bt29-presentacion-atril.jpeg" data-cap-es="Presentación en atril – SENA CMTC" data-cap-en="Podium presentation – SENA CMTC"><img src="img/bt29-presentacion-atril.jpeg" alt="Atril"/><div class="m-overlay"><span data-es="Presentación en atril" data-en="Podium presentation">Presentación en atril</span></div></div>
+      <div class="m-item" data-img="img/bt31-lectura-microfono.jpeg" data-cap-es="Lectura con micrófono – Poesía o cuento" data-cap-en="Reading with microphone – Poetry or story"><img src="img/bt31-lectura-microfono.jpeg" alt="Lectura"/><div class="m-overlay"><span data-es="Poesía en voz alta" data-en="Poetry aloud">Poesía en voz alta</span></div></div>
+      <div class="m-item" data-img="img/bt33-lectura-microfono2.jpeg" data-cap-es="Segunda lectura – Palabras propias" data-cap-en="Second reading – Personal words"><img src="img/bt33-lectura-microfono2.jpeg" alt="Lectura 2"/><div class="m-overlay"><span data-es="Palabras propias" data-en="Personal words">Palabras propias</span></div></div>
+      <div class="m-item" data-img="img/bt26-presentacion-libro.jpeg" data-cap-es="Presentación – Libro artesanal y obra visual" data-cap-en="Presentation – Handmade book and visual artwork"><img src="img/bt26-presentacion-libro.jpeg" alt="Libro artesanal"/><div class="m-overlay"><span data-es="Libro artesanal" data-en="Handmade book">Libro artesanal</span></div></div>
+      <div class="m-item" data-img="img/bt22-participante-camiseta.jpeg" data-cap-es="Participante presentando su obra artística" data-cap-en="Participant presenting their artwork"><img src="img/bt22-participante-camiseta.jpeg" alt="Participante"/><div class="m-overlay"><span data-es="Mi obra, mi historia" data-en="My work, my story">Mi obra, mi historia</span></div></div>
+      <div class="m-item" data-img="img/bt02-participante-microfono.jpeg" data-cap-es="Participante – Momento de narrativa oral" data-cap-en="Participant – Oral storytelling moment"><img src="img/bt02-participante-microfono.jpeg" alt="Narrativa"/><div class="m-overlay"><span data-es="Narrativa oral" data-en="Oral storytelling">Narrativa oral</span></div></div>
+      <div class="m-item" data-img="img/bt08-guitarrista-sena.jpeg" data-cap-es="Guitarrista – Bandera del SENA al fondo" data-cap-en="Guitarist – SENA flag in the background"><img src="img/bt08-guitarrista-sena.jpeg" alt="Guitarrista SENA"/><div class="m-overlay"><span data-es="Guitarra y SENA" data-en="Guitar and SENA">Guitarra y SENA</span></div></div>
+      <div class="m-item" data-img="img/bt13-guitarrista-aplausos.jpeg" data-cap-es="Guitarrista – Aplausos del público" data-cap-en="Guitarist – Audience applause"><img src="img/bt13-guitarrista-aplausos.jpeg" alt="Aplausos"/><div class="m-overlay"><span data-es="Aplausos" data-en="Applause">Aplausos</span></div></div>
+      <div class="m-item" data-img="img/bt24-baile-grupo.jpeg" data-cap-es="Baile grupal – Aprendices del Centro de Bienestar" data-cap-en="Group dance – Wellness Center learners"><img src="img/bt24-baile-grupo.jpeg" alt="Baile grupo"/><div class="m-overlay"><span data-es="Baile en grupo" data-en="Group dance">Baile en grupo</span></div></div>
+      <div class="m-item" data-img="img/bt01-apertura-escenario.jpeg" data-cap-es="Apertura del evento – Participantes en el escenario" data-cap-en="Event opening – Participants on stage"><img src="img/bt01-apertura-escenario.jpeg" alt="Apertura"/><div class="m-overlay"><span data-es="Apertura del evento" data-en="Event opening">Apertura del evento</span></div></div>
+      <div class="m-item" data-img="img/bt04-entrega-certificados.jpeg" data-cap-es="Entrega de certificados – Reconocimiento al talento" data-cap-en="Certificate ceremony – Recognizing talent"><img src="img/bt04-entrega-certificados.jpeg" alt="Certificados"/><div class="m-overlay"><span data-es="Certificados" data-en="Certificates">Certificados</span></div></div>
+      <div class="m-item" data-img="img/bt03-selfie-certificado.jpeg" data-cap-es="Selfie con certificado – Celebración" data-cap-en="Selfie with certificate – Celebration"><img src="img/bt03-selfie-certificado.jpeg" alt="Selfie certificado"/><div class="m-overlay"><span data-es="¡Certificado!" data-en="Certificate!">¡Certificado!</span></div></div>
+      <div class="m-item" data-img="img/bt32-publico-lleno.jpeg" data-cap-es="Salón lleno – El público del evento" data-cap-en="Full room – The event's audience"><img src="img/bt32-publico-lleno.jpeg" alt="Público"/><div class="m-overlay"><span data-es="Salón lleno" data-en="Full room">Salón lleno</span></div></div>
+      <div class="m-item" data-img="img/bt18-publico-escenario.jpeg" data-cap-es="Público y escenario – Ambiente del evento" data-cap-en="Audience and stage – Event atmosphere"><img src="img/bt18-publico-escenario.jpeg" alt="Público escenario"/><div class="m-overlay"><span data-es="Público y ambiente" data-en="Audience and atmosphere">Público y ambiente</span></div></div>
+      <div class="m-item" data-img="img/bt09-presentacion-general.jpeg" data-cap-es="Vista general – Presentaciones en el escenario" data-cap-en="General view – Stage presentations"><img src="img/bt09-presentacion-general.jpeg" alt="General"/><div class="m-overlay"><span data-es="Vista general" data-en="General view">Vista general</span></div></div>
+      <div class="m-item" data-img="img/bt16-cantante-closeup.jpeg" data-cap-es="Cantante – Primer plano" data-cap-en="Singer – Close-up"><img src="img/bt16-cantante-closeup.jpeg" alt="Cantante closeup"/><div class="m-overlay"><span data-es="Primer plano" data-en="Close-up">Primer plano</span></div></div>
+      <div class="m-item" data-img="img/bt11-guitarrista-angulo.jpeg" data-cap-es="Guitarrista – Ángulo lateral" data-cap-en="Guitarist – Side angle"><img src="img/bt11-guitarrista-angulo.jpeg" alt="Guitarrista lateral"/><div class="m-overlay"><span data-es="Enfoque musical" data-en="Musical focus">Enfoque musical</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="modal fade" id="photoModal" tabindex="-1">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content" style="background:#0d0d0d;border:none;border-radius:14px">
+      <div class="modal-header border-0 pb-0"><button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body p-2 text-center"><img id="modalImg" src="" alt="" style="max-height:82vh;width:100%;object-fit:contain;border-radius:10px"/></div>
+      <div class="modal-footer border-0 justify-content-center pt-0"><p id="modalCap" class="mb-0" style="font-size:.82rem;color:rgba(245,240,232,.45)"></p></div>
+    </div>
+  </div>
+</div>
+
+<section id="video" class="sec">
+  <div class="container">
+    <span class="eyebrow" style="color:var(--cyan)" data-es="Registro audiovisual" data-en="Audiovisual record">Registro audiovisual</span>
+    <h2 class="sec-title"><span data-es="Video del" data-en="Event">Video del</span> <em data-es="evento" data-en="video">evento</em></h2>
+    <p class="sec-text mb-4" data-es="Un momento capturado durante la Batalla de Talentos CMTC 2025." data-en="A moment captured during the 2025 CMTC Battle of Talents.">Un momento capturado durante la Batalla de Talentos CMTC 2025.</p>
+    <div class="ratio ratio-16x9 video-wrap fade-up" style="max-width:860px">
+      <video controls preload="metadata">
+        <source src="img/video01-batalla.mp4" type="video/mp4"/>
+        Tu navegador no soporta la reproducción de video.
+      </video>
+    </div>
+  </div>
+</section>
+
+<section id="reflexion" class="sec sec-alt">
+  <div class="container">
+    <span class="eyebrow" style="color:var(--orange)" data-es="Reflexión académica" data-en="Academic reflection">Reflexión académica</span>
+    <h2 class="sec-title"><span data-es="Lo que nos deja esta" data-en="What this">Lo que nos deja esta</span> <em data-es="experiencia" data-en="experience leaves us">experiencia</em></h2>
+
+    <div class="row g-4 mt-1">
+      <div class="col-lg-6 fade-up">
+        <div class="f-block" style="--fb:var(--purple)">
+          <h4><i class="bi bi-heart me-2" style="color:var(--purple)"></i><span data-es="El talento como identidad" data-en="Talent as identity">El talento como identidad</span></h4>
+          <p data-es="La Batalla de Talentos nos enseñó algo que a veces olvidamos en el aula técnica: cada persona que llega al SENA trae consigo un universo propio. El talento artístico no es un accesorio de la formación profesional, es parte fundamental de quien somos." data-en="The Battle of Talents taught us something we sometimes forget in the technical classroom: every person who arrives at SENA brings their own universe. Artistic talent is not an accessory to professional training — it is a fundamental part of who we are.">
+            La Batalla de Talentos nos enseñó algo que a veces olvidamos en el aula técnica: cada persona que llega al SENA trae consigo un universo propio. El talento artístico no es un accesorio de la formación profesional, es parte fundamental de quien somos.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-up">
+        <div class="f-block" style="--fb:var(--orange)">
+          <h4><i class="bi bi-code-slash me-2" style="color:var(--orange)"></i><span data-es="Arte y ADSO: más conectados de lo que parece" data-en="Art and ADSO: more connected than it seems">Arte y ADSO: más conectados de lo que parece</span></h4>
+          <p data-es="El desarrollo de software requiere creatividad, narrativa y empatía —las mismas cualidades que vimos en el escenario. Un desarrollador que entiende de música diseña mejores interfaces. Uno que escribe cuentos construye mejores historias de usuario." data-en="Software development requires creativity, narrative, and empathy — the same qualities we saw on stage. A developer who understands music designs better interfaces. One who writes stories builds better user stories.">
+            El desarrollo de software requiere creatividad, narrativa y empatía —las mismas cualidades que vimos en el escenario. Un desarrollador que entiende de música diseña mejores interfaces. Uno que escribe cuentos construye mejores historias de usuario.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-up">
+        <div class="f-block" style="--fb:var(--cyan)">
+          <h4><i class="bi bi-people me-2" style="color:var(--cyan)"></i><span data-es="La valentía de mostrarse" data-en="The courage to show yourself">La valentía de mostrarse</span></h4>
+          <p data-es="Lo más impresionante de la tarde no fue la técnica, sino el coraje. Subirse a un escenario frente a compañeros que conoces es exponerse de una manera que muy pocos están dispuestos a hacer. Eso también es una competencia que vale la pena desarrollar." data-en="The most impressive thing about the afternoon was not technique, but courage. Getting on stage in front of classmates you know means exposing yourself in a way very few are willing to do. That is also a skill worth developing.">
+            Lo más impresionante de la tarde no fue la técnica, sino el coraje. Subirse a un escenario frente a compañeros que conoces es exponerse de una manera que muy pocos están dispuestos a hacer. Eso también es una competencia que vale la pena desarrollar.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-up">
+        <div class="f-block" style="--fb:#10B981">
+          <h4><i class="bi bi-recycle me-2" style="color:#10B981"></i><span data-es="Sostenibilidad cultural" data-en="Cultural sustainability">Sostenibilidad cultural</span></h4>
+          <p data-es="Eventos como la Batalla de Talentos son formas de sostenibilidad cultural: preservan y celebran expresiones artísticas que, de otro modo, quedarían invisibles. Una institución que cuida el talento de sus aprendices construye una comunidad más sólida y humana." data-en="Events like the Battle of Talents are a form of cultural sustainability: they preserve and celebrate artistic expressions that would otherwise remain invisible. An institution that nurtures its learners' talent builds a stronger, more human community.">
+            Eventos como la Batalla de Talentos son formas de sostenibilidad cultural: preservan y celebran expresiones artísticas que, de otro modo, quedarían invisibles. Una institución que cuida el talento de sus aprendices construye una comunidad más sólida y humana.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
+    <div class="conclusion-box">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-10 fade-up mx-auto">
+          <span class="eyebrow" style="color:var(--purple)" data-es="Conclusión" data-en="Conclusion">Conclusión</span>
+          <h2 class="sec-title" style="font-size:clamp(1.6rem,3.5vw,2.4rem)"><span data-es="Talentos que" data-en="Talents that">Talentos que</span> <em data-es="construyen" data-en="build">construyen</em> <span data-es="comunidad" data-en="community">comunidad</span></h2>
+          <p class="sec-text" data-es="La Batalla de Talentos del CMTC demostró que el SENA es mucho más que un centro de formación técnica. Es una comunidad viva, creativa y llena de personas que tienen cosas importantes que decir, bailar, cantar, pintar y contar." data-en="The CMTC Battle of Talents showed that SENA is much more than a technical training center. It is a living, creative community full of people who have important things to say, dance, sing, paint, and tell.">
+            La Batalla de Talentos del CMTC demostró que el SENA es mucho más que un centro de formación técnica. Es una comunidad viva, creativa y llena de personas que tienen cosas importantes que decir, bailar, cantar, pintar y contar.
+          </p>
+          <p class="sec-text" data-es="Como aprendices de ADSO, salimos de esa tarde con una certeza renovada: las mejores soluciones tecnológicas nacen de personas que entienden a las personas. Y eventos como este son los que nos recuerdan por qué importa lo humano, lo artístico y lo emocional en todo lo que hacemos, incluyendo el código." data-en="As ADSO learners, we left that afternoon with a renewed certainty: the best technological solutions come from people who understand people. And events like this remind us why the human, the artistic, and the emotional matter in everything we do, including code.">
+            Como aprendices de ADSO, salimos de esa tarde con una certeza renovada: las mejores soluciones tecnológicas nacen de personas que entienden a las personas. Y eventos como este son los que nos recuerdan por qué importa lo humano, lo artístico y lo emocional en todo lo que hacemos, incluyendo el código.
+          </p>
+          <div class="d-flex gap-3 mt-4 flex-wrap">
+            <a href="#inicio" class="btn-main"><i class="bi bi-arrow-up me-2"></i><span data-es="Volver al inicio" data-en="Back to top">Volver al inicio</span></a>
+            <a href="pages/glossary.html" class="btn-outline" data-es="Glosario técnico" data-en="Technical Glossary">Glosario técnico</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+    <div>
+      <p class="f-brand" data-es="Batalla de Talentos · SENA CMTC · 2025" data-en="Battle of Talents · SENA CMTC · 2025">Batalla de Talentos · SENA CMTC · 2025</p>
+      <p class="f-sub" data-es="Centro de Manufactura en Textil y Cuero · Programa ADSO" data-en="Textile and Leather Manufacturing Center · ADSO Program">Centro de Manufactura en Textil y Cuero · Programa ADSO</p>
+    </div>
+    <div class="d-flex gap-3">
+      <a href="pages/glossary.html" class="f-link"><i class="bi bi-book me-1"></i><span data-es="Glosario" data-en="Glossary">Glosario</span></a>
+      <a href="#inicio" class="f-link"><i class="bi bi-arrow-up me-1"></i><span data-es="Subir" data-en="Top">Subir</span></a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

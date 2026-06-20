@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es" id="htmlRoot">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title data-es="Glosario – Batalla de Talentos CMTC" data-en="Glossary – CMTC Battle of Talents">Glosario – Batalla de Talentos CMTC</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <link rel="stylesheet" href="../css/styles.css"/>
+  <style>
+    .glang-toggle { display:flex; gap:4px; background:rgba(255,255,255,0.06); border:1px solid var(--border); border-radius:20px; padding:3px; }
+    .glang-btn { background:transparent; border:none; color:var(--muted); font-size:.74rem; font-weight:600; padding:.32rem .75rem; border-radius:16px; cursor:pointer; transition:var(--t); }
+    .glang-btn.active { background:var(--purple); color:#fff; }
+  </style>
+</head>
+<body>
+
+<nav id="nav" class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="brand navbar-brand" href="../index.html">
+      <span class="brand-dot"></span>
+      <span data-es="Batalla de Talentos" data-en="Battle of Talents">Batalla de Talentos</span>
+    </a>
+    <div class="d-flex align-items-center gap-2 order-lg-last">
+      <div class="glang-toggle">
+        <button class="glang-btn active" id="gBtnEs" onclick="setLang('es')">ES</button>
+        <button class="glang-btn" id="gBtnEn" onclick="setLang('en')">EN</button>
+      </div>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto gap-1 align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="../index.html#inicio" data-es="Inicio" data-en="Home">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#galeria" data-es="Galería" data-en="Gallery">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="../index.html#reflexion" data-es="Reflexión" data-en="Reflection">Reflexión</a></li>
+        <li class="nav-item"><a class="nav-link nav-glossary active" href="glossary.html" data-es="Glosario" data-en="Glossary">Glosario</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="g-hero">
+  <div class="container">
+    <span class="eyebrow" style="color:var(--purple)" data-es="Batalla de Talentos CMTC · SENA ADSO" data-en="CMTC Battle of Talents · SENA ADSO">Batalla de Talentos CMTC · SENA ADSO</span>
+    <h1 class="sec-title" style="font-size:clamp(2rem,5vw,3.5rem)">
+      <span data-es="Glosario" data-en="Glossary">Glosario</span> <em data-es="del evento" data-en="of the event">del evento</em>
+    </h1>
+    <p class="sec-text" style="max-width:600px" data-es="Términos clave para entender las disciplinas artísticas, los roles y los conceptos que dieron vida a la Batalla de Talentos del CMTC." data-en="Key terms to understand the artistic disciplines, roles, and concepts that brought the CMTC Battle of Talents to life.">
+      Términos clave para entender las disciplinas artísticas, los roles y los conceptos que dieron vida a la Batalla de Talentos del CMTC.
+    </p>
+    <div class="d-flex gap-2 mt-3 flex-wrap align-items-center">
+      <span class="stat-n" style="font-size:2rem">20</span>
+      <span class="stat-l ms-1">
+        <span data-es="términos" data-en="terms">términos</span> &nbsp;·&nbsp;
+        <span data-es="3 categorías" data-en="3 categories">3 categorías</span> &nbsp;·&nbsp;
+        <span data-es="2 idiomas" data-en="2 languages">2 idiomas</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
+    <div class="d-flex flex-column flex-md-row gap-3 align-items-start align-items-md-center mb-4 flex-wrap">
+      <input type="text" class="g-search" id="searchInput" data-es-placeholder="Buscar términos..." data-en-placeholder="Search terms..." placeholder="Buscar términos..." oninput="filterGlossary()"/>
+      <div class="d-flex gap-2 flex-wrap">
+        <button class="filter-btn active" onclick="filterCat('all',this)" data-es="Todos" data-en="All">Todos</button>
+        <button class="filter-btn" onclick="filterCat('art',this)"><i class="bi bi-stars me-1"></i><span data-es="Artes Escénicas" data-en="Performing Arts">Artes Escénicas</span></button>
+        <button class="filter-btn" onclick="filterCat('visual',this)"><i class="bi bi-palette me-1"></i><span data-es="Arte Visual" data-en="Visual Art">Arte Visual</span></button>
+        <button class="filter-btn" onclick="filterCat('event',this)"><i class="bi bi-mic me-1"></i><span data-es="Evento" data-en="Event">Evento</span></button>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="g-table">
+        <thead>
+          <tr>
+            <th data-es="Término (Inglés)" data-en="Term (English)">Término (Inglés)</th>
+            <th data-es="Español" data-en="Spanish">Español</th>
+            <th data-es="Definición" data-en="Definition">Definición</th>
+          </tr>
+        </thead>
+        <tbody id="glossaryBody"></tbody>
+      </table>
+      <p id="noResults" style="display:none;text-align:center;padding:2rem;color:var(--muted);font-style:italic" data-es="No hay términos que coincidan con tu búsqueda." data-en="No terms match your search.">No hay términos que coincidan con tu búsqueda.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+    <p class="f-sub mb-0" data-es="SENA · Centro de Manufactura en Textil y Cuero · ADSO · 2025" data-en="SENA · Textile and Leather Manufacturing Center · ADSO · 2025">SENA · Centro de Manufactura en Textil y Cuero · ADSO · 2025</p>
+    <a href="../index.html" class="f-link"><i class="bi bi-arrow-left me-1"></i><span data-es="Volver al sitio" data-en="Back to site">Volver al sitio</span></a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.style.background = window.scrollY > 60 ? 'rgba(10,10,10,0.97)' : 'rgba(10,10,10,0.88)';
+});
+
+// ── Glossary terms: Battle of Talents (performing arts, visual art, event vocabulary) ──
+const terms = [
+  { en:"Talent Show",       es:"Muestra de talentos",     def_es:"Evento donde estudiantes o participantes exhiben sus habilidades artísticas ante un público y, a veces, un jurado.", def_en:"An event where students or participants showcase their artistic skills in front of an audience and sometimes a panel of judges.", cat:"event" },
+  { en:"Performance",       es:"Performance / Actuación",  def_es:"Presentación artística en vivo que combina movimiento, expresión corporal y, a veces, narrativa, sin pertenecer a una categoría fija.", def_en:"A live artistic presentation combining movement, body expression, and sometimes narrative, without belonging to a fixed category.", cat:"art" },
+  { en:"Stage Presence",    es:"Presencia escénica",      def_es:"Capacidad de un artista para captar y mantener la atención del público mientras está en el escenario.", def_en:"An artist's ability to capture and hold the audience's attention while on stage.", cat:"art" },
+  { en:"Spotlight",         es:"Reflector / Luz de escenario", def_es:"Luz potente y dirigida que ilumina a un artista en el escenario, resaltándolo del resto del entorno.", def_en:"A powerful, directed light that illuminates a performer on stage, highlighting them from the rest of the surroundings.", cat:"event" },
+  { en:"Acoustic Guitar",   es:"Guitarra acústica",       def_es:"Instrumento de cuerda que no requiere amplificación eléctrica para producir sonido, muy usado en presentaciones íntimas.", def_en:"A stringed instrument that doesn't require electrical amplification to produce sound, widely used in intimate performances.", cat:"art" },
+  { en:"Saxophone",         es:"Saxofón",                 def_es:"Instrumento de viento de metal con lengüeta, conocido por su tono cálido y expresivo en géneros como el jazz.", def_en:"A metal woodwind instrument with a reed, known for its warm and expressive tone in genres like jazz.", cat:"art" },
+  { en:"Vocal Performance", es:"Interpretación vocal",    def_es:"Acto de cantar o expresarse mediante la voz frente a un público, transmitiendo emoción a través del canto.", def_en:"The act of singing or expressing oneself through the voice in front of an audience, conveying emotion through song.", cat:"art" },
+  { en:"Spoken Word",       es:"Narrativa oral",          def_es:"Forma de expresión artística en la que el participante cuenta una historia, poema o experiencia personal en voz alta.", def_en:"A form of artistic expression where the participant tells a story, poem, or personal experience aloud.", cat:"art" },
+  { en:"Costume",           es:"Disfraz / Vestuario",     def_es:"Prenda o conjunto de prendas que un artista usa para representar un personaje o reforzar el concepto de su presentación.", def_en:"A garment or set of garments an artist wears to represent a character or reinforce the concept of their performance.", cat:"art" },
+  { en:"Choreography",      es:"Coreografía",             def_es:"Secuencia planificada de movimientos de baile, ya sea individual, en pareja o en grupo.", def_en:"A planned sequence of dance movements, whether solo, in pairs, or in groups.", cat:"art" },
+  { en:"Visual Art",        es:"Arte visual",             def_es:"Expresión artística que se percibe principalmente a través de la vista: pintura, dibujo, fotografía e ilustración.", def_en:"Artistic expression perceived mainly through sight: painting, drawing, photography, and illustration.", cat:"visual" },
+  { en:"Exhibition Board",  es:"Tablero de exhibición",   def_es:"Panel o soporte físico (a menudo cubierto con tela) donde se exhiben obras de arte durante un evento.", def_en:"A physical panel or stand (often covered with fabric) where artworks are displayed during an event.", cat:"visual" },
+  { en:"Self-Portrait",     es:"Autorretrato",            def_es:"Obra de arte en la que el artista se representa a sí mismo, explorando su identidad o emociones.", def_en:"A work of art in which the artist represents themselves, exploring their identity or emotions.", cat:"visual" },
+  { en:"Symbolism",         es:"Simbolismo",              def_es:"Uso de imágenes, objetos o colores para representar ideas o emociones más allá de su significado literal.", def_en:"The use of images, objects, or colors to represent ideas or emotions beyond their literal meaning.", cat:"visual" },
+  { en:"Handmade Craft",    es:"Artesanía / Obra artesanal", def_es:"Objeto o pieza creada manualmente por el artista, sin producción industrial, reflejando su esfuerzo y técnica personal.", def_en:"An object or piece created by hand by the artist, without industrial production, reflecting their personal effort and technique.", cat:"visual" },
+  { en:"Recognition Certificate", es:"Certificado de reconocimiento", def_es:"Documento oficial entregado a un participante para reconocer su esfuerzo, talento o logro en el evento.", def_en:"An official document given to a participant to recognize their effort, talent, or achievement at the event.", cat:"event" },
+  { en:"Closing Ceremony",  es:"Acto de clausura",        def_es:"Momento final de un evento donde se agradece a los participantes, se entregan reconocimientos y se cierra formalmente la actividad.", def_en:"The final moment of an event where participants are thanked, recognitions are given, and the activity is formally closed.", cat:"event" },
+  { en:"Host / MC",         es:"Presentador(a) / Maestro de ceremonias", def_es:"Persona encargada de guiar el evento, presentar a los participantes y mantener la dinámica con el público.", def_en:"The person in charge of guiding the event, introducing participants, and keeping the audience engaged.", cat:"event" },
+  { en:"Audience Engagement", es:"Conexión con el público", def_es:"Capacidad de un artista o presentador de generar una respuesta emocional o participativa en quienes observan.", def_en:"An artist's or host's ability to generate an emotional or participatory response from those watching.", cat:"event" },
+  { en:"Wellness Center",   es:"Centro de Bienestar",     def_es:"Área del SENA encargada de promover actividades deportivas, culturales y artísticas para el bienestar de los aprendices.", def_en:"The SENA department responsible for promoting sports, cultural, and artistic activities for learners' wellbeing.", cat:"event" },
+];
+
+const badgeClass = { art:'bc', visual:'bd', event:'bu' };
+const badgeLabelEs = { art:'Artes Escénicas', visual:'Arte Visual', event:'Evento' };
+const badgeLabelEn = { art:'Performing Arts', visual:'Visual Art', event:'Event' };
+let activeCat = 'all';
+let currentLang = 'es';
+
+function renderGlossary(data) {
+  const tbody = document.getElementById('glossaryBody');
+  const noRes  = document.getElementById('noResults');
+  tbody.innerHTML = '';
+  if (!data.length) { noRes.style.display='block'; return; }
+  noRes.style.display = 'none';
+  const labelMap = currentLang === 'en' ? badgeLabelEn : badgeLabelEs;
+  data.forEach(t => {
+    const tr = document.createElement('tr');
+    tr.className = 'g-row';
+    tr.setAttribute('data-cat', t.cat);
+    const def = currentLang === 'en' ? t.def_en : t.def_es;
+    tr.innerHTML = `
+      <td><div class="g-en">${t.en}<span class="g-badge ${badgeClass[t.cat]}">${labelMap[t.cat]}</span></div></td>
+      <td><div class="g-es">${t.es}</div></td>
+      <td><div class="g-def">${def}</div></td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+function filterGlossary() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const filtered = terms.filter(t => {
+    const def = currentLang === 'en' ? t.def_en : t.def_es;
+    return (activeCat === 'all' || t.cat === activeCat) &&
+      (t.en.toLowerCase().includes(q) || t.es.toLowerCase().includes(q) || def.toLowerCase().includes(q));
+  });
+  renderGlossary(filtered);
+}
+
+function filterCat(cat, btn) {
+  activeCat = cat;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  filterGlossary();
+}
+
+// ── Bilingual toggle (page-wide) ──
+function setLang(lang) {
+  currentLang = lang;
+  document.documentElement.setAttribute('lang', lang);
+  document.querySelectorAll('[data-es]').forEach(el => {
+    if (el.querySelector('[data-es]')) return;
+    const text = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-es');
+    if (text !== null) el.textContent = text;
+  });
+  const searchInput = document.getElementById('searchInput');
+  if (searchInput) {
+    searchInput.placeholder = lang === 'en'
+      ? searchInput.getAttribute('data-en-placeholder')
+      : searchInput.getAttribute('data-es-placeholder');
+  }
+  document.getElementById('gBtnEs').classList.toggle('active', lang === 'es');
+  document.getElementById('gBtnEn').classList.toggle('active', lang === 'en');
+  localStorage.setItem('bt-lang', lang);
+  filterGlossary();
+}
+
+renderGlossary(terms);
+const savedLang = localStorage.getItem('bt-lang');
+if (savedLang === 'en') setLang('en');
+</script>
+</body>
+</html>
