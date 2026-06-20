@@ -101,7 +101,6 @@ window.addEventListener('scroll', () => {
   nav.style.background = window.scrollY > 60 ? 'rgba(10,10,10,0.97)' : 'rgba(10,10,10,0.88)';
 });
 
-// ── Glossary terms: Battle of Talents (performing arts, visual art, event vocabulary) ──
 const terms = [
   { en:"Talent Show",       es:"Muestra de talentos",     def_es:"Evento donde estudiantes o participantes exhiben sus habilidades artísticas ante un público y, a veces, un jurado.", def_en:"An event where students or participants showcase their artistic skills in front of an audience and sometimes a panel of judges.", cat:"event" },
   { en:"Performance",       es:"Performance / Actuación",  def_es:"Presentación artística en vivo que combina movimiento, expresión corporal y, a veces, narrativa, sin pertenecer a una categoría fija.", def_en:"A live artistic presentation combining movement, body expression, and sometimes narrative, without belonging to a fixed category.", cat:"art" },
@@ -168,7 +167,6 @@ function filterCat(cat, btn) {
   filterGlossary();
 }
 
-// ── Bilingual toggle (page-wide) ──
 function setLang(lang) {
   currentLang = lang;
   document.documentElement.setAttribute('lang', lang);
